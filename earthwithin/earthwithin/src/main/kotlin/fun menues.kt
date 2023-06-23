@@ -43,7 +43,37 @@ fun hauptmenü() {
         println("ungültig, bitte wähle erneut")
         hauptmenü ()
     }
-}*/
+}/*fun Lexicon(menu: String){
+
+    val num2 = lexiconPflanzen("Apfel", "Pektin")
+    val num3 = lexiconPflanzen("Birne","")
+    val num4 = lexiconPflanzen("Birke","")
+    val num5 = lexiconPflanzen("Brombeere","")
+    val num6 = lexiconPflanzen("Chilli","")
+    println("""
+        Lexicon:
+        [1]zurück
+        [2]Apfel
+        [3]Birne
+        [4]Birke
+        [5]Brombeere
+        [6]Chilli
+
+        """.trimIndent())
+
+    var input: String = readln()
+    when(input){
+        "1" -> return hauptMenu(menu)
+        "2" -> println(num2)
+        "3" -> println(num3)
+        "4" -> println(num4)
+        "5" -> println(num5)
+        "6" -> println(num6)
+        else ->{ println("Eingabe ungültig, wähle eine Zahl und bestätige mit Eingabe")
+            hauptMenu(menu)
+        }
+    }
+}*/*/
 
 fun hauptMenu(menu: String){
     println("""
@@ -96,37 +126,7 @@ fun menuPhytotherapie(menu: String){
     }
 }
 
-/*fun Lexicon(menu: String){
 
-    val num2 = lexiconPflanzen("Apfel", "Pektin")
-    val num3 = lexiconPflanzen("Birne","")
-    val num4 = lexiconPflanzen("Birke","")
-    val num5 = lexiconPflanzen("Brombeere","")
-    val num6 = lexiconPflanzen("Chilli","")
-    println("""
-        Lexicon:
-        [1]zurück
-        [2]Apfel
-        [3]Birne
-        [4]Birke
-        [5]Brombeere
-        [6]Chilli
-        
-        """.trimIndent())
-
-    var input: String = readln()
-    when(input){
-        "1" -> return hauptMenu(menu)
-        "2" -> println(num2)
-        "3" -> println(num3)
-        "4" -> println(num4)
-        "5" -> println(num5)
-        "6" -> println(num6)
-        else ->{ println("Eingabe ungültig, wähle eine Zahl und bestätige mit Eingabe")
-            hauptMenu(menu)
-        }
-    }
-}*/
 
 fun lexiconPflanzenList(menu: String): List <lexiconPflanzen> {
     val pflanzen = mutableListOf<lexiconPflanzen>(
@@ -145,7 +145,7 @@ fun lexiconPflanzenList(menu: String): List <lexiconPflanzen> {
     )
     var input: String = readln()
     when(input){
-        "1" -> return pflanzen
+        "1" -> hauptMenu(menu)
         in "2".."4" ->{
             val index = input.toInt()
             val lexiconPflanzen = pflanzen.getOrNull(index - 2)
